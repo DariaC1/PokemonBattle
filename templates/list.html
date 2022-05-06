@@ -1,0 +1,47 @@
+<!doctype html>
+
+<head>
+    <title>Pokemon - Gotta Catch Them All!</title>
+    <link rel= "stylesheet" type= "text/css" href="{{ url_for('static', filename='style.css')}}"
+>
+</head>
+
+<html>
+   <body class="second">
+   
+      <table border = 1>
+         <thead>
+            <td>First Pokemon ID</td>
+            <td>First Pokemon</td>            
+            <td>First Pokemon Image</td>
+            <td>Second Pokemon ID</td>
+            <td>Second Pokemon</td>            
+            <td>Second Pokemon Image</td>
+            <td>Winner</td>
+         </thead>         
+		       
+	{% for item in items %}
+	<tr>
+	    <td>{{item.firstPokemonID}}</td>
+	    <td>{{item.firstPokemon}}</td>
+	    <td><img class="imgPokemon" src="{{item.firstImagePath}}" alt="Pokemon {{item.firstPokemon}} icon"></td>  
+	    <td>{{ item.secondPokemonID }}</td>	    
+	    <td>{{ item.secondPokemon }}</td>
+	    <td><img class="imgPokemon" src="{{item.secondImagePath}}" alt="Pokemon {{item.secondPokemon}} icon"></td> 
+	    <td>{{ item.winner }}</td>	    
+	</tr>
+	{% endfor %}
+
+      </table>      
+      <br>      
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <a href="/" role="button"> <button class = "btn-return">Return</button></a>
+      
+   </body>
+</html>
